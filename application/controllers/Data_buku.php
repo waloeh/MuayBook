@@ -43,6 +43,7 @@ class Data_buku extends CI_Controller
 		$abstrak = $this->input->post('abstrak');
 		$file_digital = $this->input->post('file_digital');
 		$gambar_lama = $data_buku['gambar'];
+		$tanggal_update = date("Y-m-d H:i:s");   ;
 		$gambar = $_FILES['gambar']['name'];
 		if ($gambar) {
 			$config['allowed_types'] = 'gif|png|jpg|jpeg|pdf'; //format yang valid
@@ -78,7 +79,8 @@ class Data_buku extends CI_Controller
 			'subjek' => $subjek,
 			'abstrak' => $abstrak,
 			'file_digital' => $file_digital,
-			'gambar' => $gambar
+			'gambar' => $gambar,
+			'tanggal_update' => $tanggal_update
 		);
 		$hasil = $this->M_buku->edit($id, $data);
 		if ($hasil > 0) {
@@ -121,6 +123,7 @@ class Data_buku extends CI_Controller
 		$subjek = $this->input->post('subjek');
 		$abstrak = $this->input->post('abstrak');
 		$file_digital = $this->input->post('file_digital');
+		$tanggal_update = date('d F Y');
 		$id_petugas = $this->session->userdata('id_petugas');
 		$gambar = $_FILES['gambar']['name'];
 		if ($gambar) {
@@ -157,7 +160,8 @@ class Data_buku extends CI_Controller
 			'abstrak' => $abstrak,
 			'file_digital' => $file_digital,
 			'gambar' => $gambar,
-			'id_petugas' => $id_petugas
+			'id_petugas' => $id_petugas,
+			'tanggal_update' => $tanggal_update
 		];
 
 		$result = $this->M_buku->tambahBuku($data);

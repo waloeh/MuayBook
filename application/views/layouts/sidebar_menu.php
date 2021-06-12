@@ -37,13 +37,15 @@
       <i class="fa fa-file"></i>
       <span>Laporan</span>
     </a>
+  </li>
 
   <li class="<?php if ($title == 'Logout') echo "treeview active";  ?>">
-    <a href="<?php echo base_url('logout'); ?>">
-      <i class="fa fas-out"></i>
+    <a href="<?php echo base_url('admin/logout'); ?>" onclick="return confirm('yakin mau keluar?');">
+      <i class="fa fa-sign-out"></i>
       <span>Logout</span>
     </a>
   </li>
+
 </ul>
 </section>
 <!-- /.sidebar -->

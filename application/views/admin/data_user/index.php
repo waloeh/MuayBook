@@ -17,7 +17,10 @@
                     <div class="box-header with-border">
                         <?php echo $this->session->flashdata('message'); ?>
                         <h3 class="box-title">Tabel Data User</h3>
-                        <button class="btn btn-primary btn-sm mb-5 pull-right" data-toggle="modal" data-target="#modalDataUser"><i class="fa fa-plus"> Tambah</i></button>
+                        <?php
+                            if ($this->session->userdata('jabatan') == "Admin") { ?>
+                                <button class="btn btn-primary btn-sm mb-5 pull-right hiden" data-toggle="modal" data-target="#modalDataUser"><i class="fa fa-plus"> Tambah</i></button> 
+                           <?php } ?>                   
                     </div>
                     <?php include 'tambah.php'; ?>
                     <!-- Start table -->
@@ -46,7 +49,10 @@
                                         <td><?php echo $data['email'] ?></td>
                                         <td>
                                             <a id="detail" class="btn btn-xs btn-success" href="<?php echo base_url('data_user/detail/' . $data['id_petugas']) ?>"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="detail"></i></a>
-                                            <a id="hapus" class="btn btn-xs btn-danger" href="<?php echo base_url('data_user/hapus/' . $data['id_petugas']) ?>" onclick="return confirm('yakin mau dihapus?');" data-toggle="tooltip" data-placement="top" title="hapus"><i class="fa fa-trash"></i></a>
+                                            <?php if($this->session->userdata('jabatan') == "Admin") { ?>
+                                                <a id="hapus" class="btn btn-xs btn-danger" href="<?php echo base_url('data_user/hapus/' . $data['id_petugas']) ?>" onclick="return confirm('yakin mau dihapus?');" data-toggle="tooltip" data-placement="top" title="hapus"><i class="fa fa-trash"></i></a>
+                                            <?php } ?>
+                                            
                                         </td>
                                     </tr>
                                 </tbody>

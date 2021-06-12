@@ -17,7 +17,7 @@ class Laporan extends CI_Controller
         $data['title'] = "Laporan";
         $kategori = $this->input->post('kategori');
         $data['dataUser']  = $this->M_user->userById($this->session->userdata('id_petugas'));
-        $data['data_buku'] = $this->M_buku->dataBukuByKategory($kategori);
+        $data['data_buku'] = $this->M_buku->dataBukuByKategoriLaporan($kategori);
         $this->load->view('layouts/head');
         $this->load->view('layouts/header', $data);
         $this->load->view('layouts/sidebar_menu', $data);
@@ -27,7 +27,7 @@ class Laporan extends CI_Controller
 
     public function cetakPdf($kategori = "")
     {
-        $data['data_buku'] = $this->M_buku->dataBukuByKategory($kategori);
+        $data['data_buku'] = $this->M_buku->dataBukuByKategoriLaporan($kategori);
 
         //load library dompdf
         $this->load->library('pdf');

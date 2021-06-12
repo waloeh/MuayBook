@@ -15,35 +15,35 @@ class Home extends CI_Controller
         $jmlDataBuku = $this->M_buku->jml_data_buku();
         $config['base_url'] = 'http://localhost/Buku/index.php/home/index/';
         $config['total_rows'] = $jmlDataBuku;
-        $config['per_page'] = 3;
+        $config['per_page'] = 4;
         $data['mulai'] = $this->uri->segment(3);
         //styling
-        $config['full_tag_open'] = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
+        // $config['full_tag_open'] = '<nav><ul class="pagination">';
+        // $config['full_tag_close'] = '</ul></nav>';
 
-        $config['first_link'] = 'first';
-        $config['first_tag_open'] = '<li>';
-        $config['first_tag_close'] = '</li>';
+        // $config['first_link'] = 'first';
+        // $config['first_tag_open'] = '<li>';
+        // $config['first_tag_close'] = '</li>';
 
-        $config['last_link'] = 'last';
-        $config['last_tag_open'] = '<li>';
-        $config['last_tag_close'] = '</li>';
+        // $config['last_link'] = 'last';
+        // $config['last_tag_open'] = '<li>';
+        // $config['last_tag_close'] = '</li>';
 
-        $config['next_link'] = '&raquo';
-        $config['next_tag_open'] = '<li>';
-        $config['next_tag_close'] = '</li>';
+        // $config['next_link'] = '&raquo';
+        // $config['next_tag_open'] = '<li>';
+        // $config['next_tag_close'] = '</li>';
 
-        $config['prev_link'] = '&laquo';
-        $config['prev_tag_open'] = '<li>';
-        $config['prev_tag_close'] = '</li>';
+        // $config['prev_link'] = '&laquo';
+        // $config['prev_tag_open'] = '<li>';
+        // $config['prev_tag_close'] = '</li>';
 
-        $config['cur_tag_open'] = '<li class="active>';
-        $config['cur_tag_close'] = '</a></li>';
+        // $config['cur_tag_open'] = '<li class="active>';
+        // $config['cur_tag_close'] = '</a></li>';
 
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
+        // $config['num_tag_open'] = '<li>';
+        // $config['num_tag_close'] = '</li>';
 
-        $config['attributes'] = array('class' => 'page-link');
+        // $config['attributes'] = array('class' => 'page-link');
 
         //inisialisasi
         $this->pagination->initialize($config);
@@ -68,7 +68,7 @@ class Home extends CI_Controller
         $jmlDataBuku = $this->M_buku->jml_data_buku();
         $config['base_url'] = 'http://localhost/Buku/index.php/home/index/';
         $config['total_rows'] = $jmlDataBuku;
-        $config['per_page'] = 3;
+        $config['per_page'] = 4;
         $dimulaiDari = $url;
         $this->pagination->initialize($config);
         $data = $this->M_buku->data_buku_limit($config['per_page'], $dimulaiDari);

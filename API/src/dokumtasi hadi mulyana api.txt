@@ -1,4 +1,0 @@
--coppy file RestController.php di folde librarries
--coppy file rest.php di folder config
--coppy language di folder language boleh menggunakan salah satu bahasa saja
-

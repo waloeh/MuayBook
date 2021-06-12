@@ -43,6 +43,11 @@ class M_buku extends CI_Model
         return $this->db->get('buku', $perPage, $dimulaiDari)->result_array();
     }
 
+    public function dataBukuByKategoriLaporan($kategori) {
+        $this->db->where('kategori', $kategori);
+        return $this->db->get('buku')->result_array();
+    }
+
     public function cariBuku($textCari, $kategori)
     {
         $kategori = (string)$kategori;
